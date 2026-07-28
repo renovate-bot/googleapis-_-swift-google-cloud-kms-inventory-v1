@@ -18,7 +18,7 @@ import Foundation
 #if canImport(FoundationNetworking)
   import FoundationNetworking
 #endif
-import GoogleCloudKmsV1
+import GoogleCloudKMSV1
 import GoogleCloudWkt
 import GoogleCloudGax
 
@@ -26,7 +26,7 @@ extension Clients {
   protocol KeyDashboardServiceStub {
     func listCryptoKeys(
       request: ListCryptoKeysRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudKmsInventoryV1.ListCryptoKeysResponse
+    ) async throws -> GoogleCloudKMSInventoryV1.ListCryptoKeysResponse
   }
 
   class KeyDashboardServiceTransport: KeyDashboardServiceStub {
@@ -39,7 +39,7 @@ extension Clients {
 
     public func listCryptoKeys(
       request: ListCryptoKeysRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudKmsInventoryV1.ListCryptoKeysResponse {
+    ) async throws -> GoogleCloudKMSInventoryV1.ListCryptoKeysResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
@@ -57,7 +57,7 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudKmsInventoryV1.ListCryptoKeysResponse.self, from: data)
+        GoogleCloudKMSInventoryV1.ListCryptoKeysResponse.self, from: data)
     }
   }
 }

@@ -27,7 +27,7 @@ public struct GetProtectedResourcesSummaryRequest: Codable, Equatable, GoogleClo
   /// Required. The resource name of the
   /// [CryptoKey][google.cloud.kms.v1.CryptoKey].
   ///
-  /// [google.cloud.kms.v1.CryptoKey]: https://www.google.com/search?q=Swift+google.cloud.kms.v1+GoogleCloudKmsV1.CryptoKey
+  /// [google.cloud.kms.v1.CryptoKey]: https://www.google.com/search?q=Swift+google.cloud.kms.v1+GoogleCloudKMSV1.CryptoKey
   public var name: Swift.String = Swift.String()
 
   /// Optional. The scope to use if the kms organization service account is not

@@ -18,7 +18,7 @@ import Foundation
 #if canImport(FoundationNetworking)
   import FoundationNetworking
 #endif
-import GoogleCloudKmsV1
+import GoogleCloudKMSV1
 import GoogleCloudWkt
 import GoogleCloudGax
 import struct Logging.Logger
@@ -59,14 +59,14 @@ extension Clients {
 
     public func listCryptoKeys(
       request: ListCryptoKeysRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudKmsInventoryV1.ListCryptoKeysResponse {
+    ) async throws -> GoogleCloudKMSInventoryV1.ListCryptoKeysResponse {
       try await self._intercept(
         request: request,
         options: options,
         name: "listCryptoKeys",
         action: {
           (r: ListCryptoKeysRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudKmsInventoryV1.ListCryptoKeysResponse
+            -> GoogleCloudKMSInventoryV1.ListCryptoKeysResponse
           in
           return try await self.inner.listCryptoKeys(request: r, options: o)
         })

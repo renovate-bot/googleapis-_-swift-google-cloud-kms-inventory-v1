@@ -25,11 +25,11 @@ extension Clients {
   protocol KeyTrackingServiceStub {
     func getProtectedResourcesSummary(
       request: GetProtectedResourcesSummaryRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudKmsInventoryV1.ProtectedResourcesSummary
+    ) async throws -> GoogleCloudKMSInventoryV1.ProtectedResourcesSummary
 
     func searchProtectedResources(
       request: SearchProtectedResourcesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudKmsInventoryV1.SearchProtectedResourcesResponse
+    ) async throws -> GoogleCloudKMSInventoryV1.SearchProtectedResourcesResponse
   }
 
   class KeyTrackingServiceTransport: KeyTrackingServiceStub {
@@ -42,7 +42,7 @@ extension Clients {
 
     public func getProtectedResourcesSummary(
       request: GetProtectedResourcesSummaryRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudKmsInventoryV1.ProtectedResourcesSummary {
+    ) async throws -> GoogleCloudKMSInventoryV1.ProtectedResourcesSummary {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
@@ -59,12 +59,12 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudKmsInventoryV1.ProtectedResourcesSummary.self, from: data)
+        GoogleCloudKMSInventoryV1.ProtectedResourcesSummary.self, from: data)
     }
 
     public func searchProtectedResources(
       request: SearchProtectedResourcesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudKmsInventoryV1.SearchProtectedResourcesResponse {
+    ) async throws -> GoogleCloudKMSInventoryV1.SearchProtectedResourcesResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.scope as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.scope' is not set or is empty")
@@ -84,7 +84,7 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudKmsInventoryV1.SearchProtectedResourcesResponse.self, from: data)
+        GoogleCloudKMSInventoryV1.SearchProtectedResourcesResponse.self, from: data)
     }
   }
 }

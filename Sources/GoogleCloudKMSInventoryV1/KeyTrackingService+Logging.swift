@@ -58,14 +58,14 @@ extension Clients {
 
     public func getProtectedResourcesSummary(
       request: GetProtectedResourcesSummaryRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudKmsInventoryV1.ProtectedResourcesSummary {
+    ) async throws -> GoogleCloudKMSInventoryV1.ProtectedResourcesSummary {
       try await self._intercept(
         request: request,
         options: options,
         name: "getProtectedResourcesSummary",
         action: {
           (r: GetProtectedResourcesSummaryRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudKmsInventoryV1.ProtectedResourcesSummary
+            -> GoogleCloudKMSInventoryV1.ProtectedResourcesSummary
           in
           return try await self.inner.getProtectedResourcesSummary(request: r, options: o)
         })
@@ -73,14 +73,14 @@ extension Clients {
 
     public func searchProtectedResources(
       request: SearchProtectedResourcesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudKmsInventoryV1.SearchProtectedResourcesResponse {
+    ) async throws -> GoogleCloudKMSInventoryV1.SearchProtectedResourcesResponse {
       try await self._intercept(
         request: request,
         options: options,
         name: "searchProtectedResources",
         action: {
           (r: SearchProtectedResourcesRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudKmsInventoryV1.SearchProtectedResourcesResponse
+            -> GoogleCloudKMSInventoryV1.SearchProtectedResourcesResponse
           in
           return try await self.inner.searchProtectedResources(request: r, options: o)
         })

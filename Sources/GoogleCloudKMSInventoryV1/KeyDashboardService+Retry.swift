@@ -18,15 +18,16 @@ import Foundation
 #if canImport(FoundationNetworking)
   import FoundationNetworking
 #endif
+import GoogleCloudKMSV1
 import GoogleCloudWkt
 import GoogleCloudGax
 
 extension Clients {
-  final class KeyTrackingServiceRetry: KeyTrackingServiceStub {
-    let inner: any KeyTrackingServiceStub
+  final class KeyDashboardServiceRetry: KeyDashboardServiceStub {
+    let inner: any KeyDashboardServiceStub
     let options: GoogleCloudGax.ClientOptions
 
-    public init(_ inner: any KeyTrackingServiceStub, options: GoogleCloudGax.ClientOptions) {
+    public init(_ inner: any KeyDashboardServiceStub, options: GoogleCloudGax.ClientOptions) {
       self.inner = inner
       self.options = options
     }
@@ -48,33 +49,18 @@ extension Clients {
       return try await loop.run(attempt: attempt)
     }
 
-    public func getProtectedResourcesSummary(
-      request: GetProtectedResourcesSummaryRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudKmsInventoryV1.ProtectedResourcesSummary {
+    public func listCryptoKeys(
+      request: ListCryptoKeysRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudKMSInventoryV1.ListCryptoKeysResponse {
       try await self._intercept(
         request: request,
         options: options,
         idempotent: true,
         action: {
-          (r: GetProtectedResourcesSummaryRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudKmsInventoryV1.ProtectedResourcesSummary
+          (r: ListCryptoKeysRequest, o: GoogleCloudGax.RequestOptions) async throws
+            -> GoogleCloudKMSInventoryV1.ListCryptoKeysResponse
           in
-          return try await self.inner.getProtectedResourcesSummary(request: r, options: o)
-        })
-    }
-
-    public func searchProtectedResources(
-      request: SearchProtectedResourcesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudKmsInventoryV1.SearchProtectedResourcesResponse {
-      try await self._intercept(
-        request: request,
-        options: options,
-        idempotent: true,
-        action: {
-          (r: SearchProtectedResourcesRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudKmsInventoryV1.SearchProtectedResourcesResponse
-          in
-          return try await self.inner.searchProtectedResources(request: r, options: o)
+          return try await self.inner.listCryptoKeys(request: r, options: o)
         })
     }
   }

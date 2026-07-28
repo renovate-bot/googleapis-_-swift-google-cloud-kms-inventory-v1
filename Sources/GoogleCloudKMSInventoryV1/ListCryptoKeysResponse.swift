@@ -16,7 +16,7 @@
 
 import Foundation
 import GoogleCloudGax
-import GoogleCloudKmsV1
+import GoogleCloudKMSV1
 import GoogleCloudWkt
 
 /// Response message for
@@ -29,8 +29,8 @@ public struct ListCryptoKeysResponse: Codable, Equatable, GoogleCloudWkt._AnyPac
 {
   /// The list of [CryptoKeys][google.cloud.kms.v1.CryptoKey].
   ///
-  /// [google.cloud.kms.v1.CryptoKey]: https://www.google.com/search?q=Swift+google.cloud.kms.v1+GoogleCloudKmsV1.CryptoKey
-  public var cryptoKeys: [GoogleCloudKmsV1.CryptoKey] = []
+  /// [google.cloud.kms.v1.CryptoKey]: https://www.google.com/search?q=Swift+google.cloud.kms.v1+GoogleCloudKMSV1.CryptoKey
+  public var cryptoKeys: [GoogleCloudKMSV1.CryptoKey] = []
 
   /// The page token returned from the previous response if the next page is
   /// desired.
@@ -62,7 +62,7 @@ public struct ListCryptoKeysResponse: Codable, Equatable, GoogleCloudWkt._AnyPac
     return try GoogleCloudWkt._slowAnySerialize(message: self)
   }
 
-  public func _getPaginatedItems() -> [GoogleCloudKmsV1.CryptoKey] {
+  public func _getPaginatedItems() -> [GoogleCloudKMSV1.CryptoKey] {
     return self.cryptoKeys
   }
 
