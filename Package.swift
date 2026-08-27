@@ -26,7 +26,7 @@ let package = Package(
   dependencies: [
     .package(path: "../../packages/auth"),
     .package(path: "../../packages/gax"),
-    .package(path: "../../generated/google-cloud-kms-v1"),
+    .package(path: "../../generated/swift-google-cloud-kms-v1"),
     .package(path: "../../packages/wkt"),
     .package(url: "https://github.com/apple/swift-log", from: "1.12.0"),
   ],
@@ -36,7 +36,7 @@ let package = Package(
       dependencies: [
         .product(name: "GoogleCloudAuth", package: "auth"),
         .product(name: "GoogleCloudGax", package: "gax"),
-        .product(name: "GoogleCloudKMSV1", package: "google-cloud-kms-v1"),
+        .product(name: "GoogleCloudKMSV1", package: "swift-google-cloud-kms-v1"),
         .product(name: "GoogleCloudWKT", package: "wkt"),
         .product(name: "Logging", package: "swift-log"),
       ],
